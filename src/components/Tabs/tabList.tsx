@@ -3,6 +3,7 @@ import { useTickets } from "@/hooks/useTickets";
 import TicketItem from "./TicketItem";
 import { useAtom } from "jotai";
 import { ticketsAtom, activeTicketAtom } from "@/atoms/TicketAtoms";
+import { AddButton } from "../MainContent/buttons/AddButton";
 import { removeTicket } from "@/api/mockTicketsApi";
 
 export default function TicketsTabs() {
@@ -29,7 +30,7 @@ export default function TicketsTabs() {
   };
 
   return (
-    <div className="flex overflow-x-auto border-b border-[#E2E8F0]">
+    <div className="flex overflow-x-auto border-b border-[#E2E8F0] items-center gap-[8.5px]">
       {tickets.map((ticket) => (
         <TicketItem
           key={ticket.id}
@@ -39,6 +40,7 @@ export default function TicketsTabs() {
           onRemove={() => handleRemove(ticket.id)}
         />
       ))}
+      <AddButton onClick={""} />
     </div>
   );
 }
