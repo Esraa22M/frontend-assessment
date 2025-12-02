@@ -6,7 +6,7 @@ interface QuickRepliesProps {
 
 export default function QuickReplies({ replies }: QuickRepliesProps) {
   return (
-    <div className="flex flex-wrap gap-[12px] p-[8px] bg-[#F7F8FA] mb-[8px] rounded-[8px] cursor-pointer">
+    <div className="flex flex-wrap gap-[12px] p-[8px] bg-[#F7F8FA] mb-[8px] rounded-[8px] cursor-pointer mt-[8px]">
       {replies.map((text, index) => (
         <button
           key={index}
@@ -16,7 +16,7 @@ export default function QuickReplies({ replies }: QuickRepliesProps) {
             hover:bg-[#00CA7C] hover:text-white 
             inline-flex items-center justify-center
             bg-white
-            px-3 h-[22px] rounded-[8px]
+            px-3 h-[22px] rounded-[20px]
             border border-[#B8BFCC] text-[#B8BFCC]
             font-Rubik font-normal text-[9px] leading-[150%] tracking-[0%] text-center
           "

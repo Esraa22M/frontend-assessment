@@ -44,7 +44,7 @@ export default function EmailCCInput() {
         {emails.map((email, index) => (
           <div
             key={index}
-            className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-full text-sm border border-gray-200"
+            className="flex items-center gap-1 bg-gray-100  text-sm border border-gray-200"
           >
             {email}
             <button onClick={() => removeEmail(email)}>

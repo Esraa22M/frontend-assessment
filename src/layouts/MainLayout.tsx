@@ -11,7 +11,7 @@ const MainLayout = () => {
         <TicketDetailsPanel />
       </div>
 
-      <div className={`${isToggled ? "w-[0px]" : "w-[232px]"} border-x border-[#E2E8F0] transition-all duration-300 `}>
+      <div className={`${isToggled ? "w-[0px]" : "w-[203px]"} border-x border-[#E2E8F0] transition-all duration-300 `}>
         <TimelinePanel isToggled={isToggled} setIsToggled={setIsToggled} />
       </div>
 

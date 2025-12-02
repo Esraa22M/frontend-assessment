@@ -8,7 +8,7 @@ const QuickRepliesHeader: React.FC = () => {
     <div className="flex items-center">
       <p
         className="font-Rubik font-normal text-[13px] inline-flex items-center justify-center
-        leading-[150%] tracking-[0%] text-right text-[#7A8699] ml-[16px]"
+        leading-[150%] tracking-[0%] text-right text-[#7A8699] ml-[16px] whitespace-nowrap"  
       >
         ردود سريعة
       </p>

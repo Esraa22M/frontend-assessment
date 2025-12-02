@@ -15,18 +15,18 @@ export default function EmailList() {
   };
 
   return (
-    <div className="flex flex-wrap gap-[8px]">
+    <div className="flex flex-wrap gap-[8px] mt-[8px]">
       {emails.map((email, index) => (
         <div
           key={index}
-          className="flex items-center gap-[8px] w-max p-[8px] rounded-[20px] border border-[#B8BFCC] px-[12px] py-[4px] bg-white text-sm font-Rubik font-normal text-[#7A8699] bg-red-500"
+          className="flex items-center gap-[8px] h-[22px] w-max rounded-[20px] border border-[#B8BFCC]  bg-white text-sm font-Rubik font-normal text-[#7A8699] px-[12px] py-[4px]"
         >
           <p className="m-0 inline-flex">{email}</p>
           <button
             onClick={() => removeEmail(index)}
             className=" inline-flex items-center justify-center cursor-pointer "
           >
-            <X size={14} />
+            <X size={12} />
           </button>
         </div>
       ))}

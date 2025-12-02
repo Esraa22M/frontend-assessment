@@ -34,7 +34,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-white border-l  f border-[#EAEAEA] flex flex-col items-center  w-[75px] pt-[97px] pb-[29px]">
+    <div className="h-screen bg-white border-l  f border-[#EAEAEA] flex flex-col items-center  w-[70px] pt-[97px] pb-[29px]">
       {/* Sidebar Menu Items */}
       <SidebarMenuItems onClick={handleClick} items={menuItems} active={active} SidebarItem={SidebarItem} />
       {/* Sidebar Avatar */}
