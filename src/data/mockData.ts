@@ -1,0 +1,78 @@
+import type { Ticket } from "@/types/ticket";
+import replierImage from "./replier-images/replier.png";
+
+export const ticketsMock: Ticket[] = [
+  {
+    id: "t-4545",
+    requesterName: "راشد الفهد",
+    requesterEmail: "rashed@example.com",
+    subject: "واجهة المستخدم لا تعمل",
+    lastUpdated: "2025-11-25T12:00:00.000Z",
+    replies: [
+      {
+        id: "r-1",
+        fromName: "راشد الفهد",
+        toName: "محمد صقر",
+        fromEmail: "rashed@example.com",
+        toEmail: "support@example.com",
+        role: "customer",
+        message: "واجهت مشكلة في واجهة المستخدم وأرسلت البلاغ.",
+        date: "2025-11-20T10:20:00.000Z",
+        avatar: replierImage,
+      },
+      {
+        id: "r-2",
+        fromName: "محمد صقر",
+        toName: "راشد الفهد",
+        fromEmail: "support@example.com",
+        toEmail: "rashed@example.com",
+        role: "agent",
+        message: "تم استلام الطلب وسيتم المتابعة.",
+        date: "2025-11-20T11:00:00.000Z",
+        avatar: replierImage,
+      },
+      {
+        id: "r-3",
+        fromName: "محمد صقر",
+        toName: "راشد الفهد",
+        fromEmail: "support@example.com",
+        toEmail: "rashed@example.com",
+        role: "agent",
+        message: "نرجو إرسال لقطة شاشة للمشكلة.",
+        date: "2025-11-22T18:20:00.000Z",
+        avatar: replierImage,
+      },
+    ],
+  },
+  {
+    id: "t-4546",
+    requesterName: "نواف العتيبي",
+    requesterEmail: "nawaf@example.com",
+    subject: "مشكلة في تسجيل الدخول",
+    lastUpdated: "2025-11-22T09:30:00.000Z",
+    replies: [
+      {
+        id: "r-4",
+        fromName: "نواف العتيبي",
+        toName: "محمد صقر",
+        fromEmail: "nawaf@example.com",
+        toEmail: "support@example.com",
+        role: "customer",
+        message: "لا أستطيع تسجيل الدخول منذ التحديث الأخير.",
+        date: "2025-11-21T07:10:00.000Z",
+        avatar: replierImage,
+      },
+      {
+        id: "r-5",
+        fromName: "محمد صقر",
+        toName: "نواف العتيبي",
+        fromEmail: "support@example.com",
+        toEmail: "nawaf@example.com",
+        role: "agent",
+        message: "جربت استعادة كلمة المرور؟",
+        date: "2025-11-21T08:20:00.000Z",
+        avatar: replierImage,
+      },
+    ],
+  },
+];

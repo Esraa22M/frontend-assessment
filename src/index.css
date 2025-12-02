@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("../src/assets/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+@import 'tailwind-scrollbar-hide/v4';
+
+@theme {
+  --font-primary: "Rubik";
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-primary);
+}
+div, main {
+  scrollbar-width: none; 
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
