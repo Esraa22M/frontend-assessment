@@ -12,7 +12,7 @@ const SidebarItem = ({ label, Icon, isActive, onClick }) => {
   return (
     <li
       onClick={onClick}
-      className="flex flex-col items-center gap-1 px-4 pb-2 rounded-2xl cursor-pointer transition-all h-[70px]"
+      className="flex flex-col items-center gap-1  pb-2 rounded-2xl cursor-pointer transition-all h-[70px]"
     >
       <div className={iconClasses}>
         <Icon fillcolor={isActive ? "#00CA7C" : "#666C83"} size={40} />

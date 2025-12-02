@@ -1,5 +1,6 @@
 // Sidebar.jsx
 import { useState, useMemo, useCallback } from "react";
+
 import DashboardComponent from "./icons/dashboard";
 import UsersComponent from "./icons/users";
 import FileSignatureComponent from "./icons/fileSignature";
@@ -9,11 +10,14 @@ import WalletComponent from "./icons/Wallet";
 import Calender from "./icons/calender";
 import ClipBoardList from "./icons/clipBoardList";
 import SettingsComponent from "./icons/settings";
+
 import SidebarAvatar from "./sidebar-avatar/SidebarAvatar";
 import SidebarMenuItems from "../commons/SidebarMenuItems";
 import SidebarItem from "./SidebarItem";
+
 const Sidebar = () => {
   const [active, setActive] = useState("الطلبات");
+
   const menuItems = useMemo(
     () => [
       { label: "اللوحة", icon: DashboardComponent },
@@ -34,19 +38,28 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="h-screen bg-white border-l  f border-[#EAEAEA] flex flex-col items-center  w-[70px] pt-[97px] pb-[29px]">
-      {/* Sidebar Menu Items */}
-      <SidebarMenuItems onClick={handleClick} items={menuItems} active={active} SidebarItem={SidebarItem} />
-      {/* Sidebar Avatar */}
-      <SidebarAvatar
+    <div className="h-screen bg-white border-l border-[#EAEAEA] w-[70px] overflow-y-auto">
 
+      <div className="h-[97px] w-full" />
 
+      <SidebarMenuItems
+        items={menuItems}
+        active={active}
+        onClick={handleClick}
+        SidebarItem={SidebarItem}
       />
+
+      <div className="mb-[29px] flex justify-center">
+        <SidebarAvatar />
+      </div>
 
     </div>
   );
 };
 
 export default Sidebar;
+
+
+
 
 
