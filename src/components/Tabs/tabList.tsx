@@ -5,11 +5,13 @@ import { useAtom } from "jotai";
 import { ticketsAtom, activeTicketAtom } from "@/atoms/TicketAtoms";
 import { AddButton } from "../MainContent/buttons/AddButton";
 import { removeTicket } from "@/api/mockTicketsApi";
+import { createTicketOverlayAtom } from "@/atoms/OverlayAtom";
 
 export default function TicketsTabs() {
   const { data, isLoading, error } = useTickets(); 
   const [tickets, setTickets] = useAtom(ticketsAtom);
   const [activeId, setActiveId] = useAtom(activeTicketAtom);
+  const [, setShowOverlay] = useAtom(createTicketOverlayAtom);
 
   useEffect(() => {
     if (data) setTickets(data);
@@ -40,9 +42,10 @@ export default function TicketsTabs() {
           onRemove={() => handleRemove(ticket.id)}
         />
       ))}
-      <AddButton onClick={""} />
+      <AddButton onClick={() => setShowOverlay(true)} />
     </div>
   );
 }
+
 
 
