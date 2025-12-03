@@ -19,21 +19,37 @@ export default function TicketsTabs() {
     mutationFn: (ticketId: string) => removeTicket(ticketId),
 
     onSuccess: (_, ticketId) => {
-      // تحديث كاش React Query
       queryClient.setQueryData(["tickets"], (old: Ticket[]) =>
         old.filter((t: Ticket) => t.id !== ticketId)
       );
 
-      // لو التذكرة المتحذوفة هي اللي كانت مفتوحة
       if (activeId === ticketId) {
         setActiveId(null);
       }
     },
   });
 
-  if (isLoading) return <p>جاري تحميل الطلبات...</p>;
-  if (error) return <p>حدث خطأ أثناء جلب الطلبات</p>;
-  if (!tickets?.length) return <p>لا توجد طلبات</p>;
+ if (isLoading)
+  return (
+    <p className="text-gray-500 text-sm text-center py-4">
+      جاري تحميل الطلبات...
+    </p>
+  );
+
+if (error)
+  return (
+    <p className="text-red-500 text-sm text-center py-4">
+      حدث خطأ أثناء جلب الطلبات
+    </p>
+  );
+
+if (!tickets?.length)
+  return (
+    <p className="text-gray-400 text-sm text-center py-4">
+      لا توجد طلبات
+    </p>
+  );
+
 
   return (
     <div className="flex overflow-x-auto border-b border-[#E2E8F0] items-center gap-[8.5px]">
