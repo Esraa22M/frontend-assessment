@@ -72,7 +72,7 @@ export const addReply = async (
     ...replyData,
   };
 
-  ticket.replies.push(newReply);
+  ticket?.replies?.push(newReply);
   ticket.lastUpdated = newReply.date;
 
   return newReply;
