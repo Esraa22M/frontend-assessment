@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider as JotaiProvider } from "jotai";
 import MainLayout from "./layouts/MainLayout";
 import TicketsTabs from "./components/Tabs/tabList";
-import { CreateTicketForm } from "./components/TicketAddationSystem/TicketForm/CreateTicketForm";
+import CreateTicketOverlay from "./ui/FormOverlay";
 const queryClient = new QueryClient();
 
 function App() {
@@ -13,11 +13,8 @@ function App() {
       <JotaiProvider>
         <AppLayout>
           <TicketsTabs />
-          <MainLayout />
-          {/* Overlay ثابت فوق كل التطبيق */}
-          <div className="fixed inset-0 bg-[#0DDD8F] bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <CreateTicketForm onSubmitTicket={() => { }} />
-          </div>
+          <MainLayout /> 
+          <CreateTicketOverlay onSubmitTicket={()=>{}} onClose={()=>{}}/>
         </AppLayout>
       </JotaiProvider>
     </QueryClientProvider>
