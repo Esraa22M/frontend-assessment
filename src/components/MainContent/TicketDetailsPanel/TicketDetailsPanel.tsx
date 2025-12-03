@@ -20,11 +20,11 @@ export default function TicketDetailsPanel() {
 
   return (
     <>
-      <div className="mt-[24px] mx-[24px] scrollbar-hide">
+      {tickets?.length?<div className="mt-[24px] mx-[24px] scrollbar-hide">
         <TicketHeaderRow header={activeTicket?.subject} />
         <ReplayList replies={activeTicket?.replies ?? []} />
-      </div>
-      {!isFullscreen && <ReplayBanel />}
+      </div>:<></>}
+      {!isFullscreen&&tickets?.length ?<ReplayBanel />:<></>}
     </>
   );
 }
