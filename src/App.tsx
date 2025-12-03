@@ -9,14 +9,12 @@ import { createTicketOverlayAtom } from "@/atoms/OverlayAtom";
 const queryClient = new QueryClient();
 function AppContent() {
   const [showOverlay, setShowOverlay] = useAtom(createTicketOverlayAtom);
-
   return (
     <>
       <TicketsTabs />
       <MainLayout />
       {showOverlay && (
         <CreateTicketOverlay
-          onSubmitTicket={() => setShowOverlay(false)}
           onClose={() => setShowOverlay(false)}
         />
       )}
