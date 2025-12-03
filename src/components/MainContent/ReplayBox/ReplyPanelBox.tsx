@@ -33,7 +33,7 @@ export default function ReplyPanelBox() {
         <div className="flex gap-[10px]">
           <IconButton bgColor="#00CA7C" label="cc" />
           <IconButton 
-            Icon={isFullscreenIcon ? Minimize : FullscreenIcon} 
+            Icon={isFullscreenIcon ? FullscreenIcon:Minimize} 
             onClick={handleFullscreenToggle} 
           />
         </div>
