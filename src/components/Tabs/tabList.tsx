@@ -31,21 +31,21 @@ export default function TicketsTabs() {
 
  if (isLoading)
   return (
-    <p className="text-gray-500 text-sm text-center py-4">
+    <p className="text-gray-500 text-sm text-center py-4  border-b border-[#E2E8F0]">
       جاري تحميل الطلبات...
     </p>
   );
 
 if (error)
   return (
-    <p className="text-red-500 text-sm text-center py-4">
+    <p className="text-red-500 text-sm text-center py-4  border-b border-[#E2E8F0]">
       حدث خطأ أثناء جلب الطلبات
     </p>
   );
 
 if (!tickets?.length)
   return (
-    <p className="text-gray-400 text-sm text-center py-4">
+    <p className="text-gray-400 text-sm text-center py-4  border-b border-[#E2E8F0]">
       لا توجد طلبات
     </p>
   );
