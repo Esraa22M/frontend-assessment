@@ -29,13 +29,12 @@ export function CreateTicketForm({ onSubmitTicket, onClose }) {
 
   return (
     <div className="relative w-full max-w-md">
-      {/* Badge X أصغر وألوان متناسقة */}
       <button
         type="button"
         onClick={onClose}
         className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shadow-sm hover:bg-gray-200 transition-colors"
       >
-        <X size={16} color="#EF4444" /> {/* لون أحمر خفيف للـ X */}
+        <X size={16} color="#EF4444" /> 
       </button>
 
       <form

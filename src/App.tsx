@@ -6,9 +6,7 @@ import MainLayout from "./layouts/MainLayout";
 import TicketsTabs from "./components/Tabs/tabList";
 import CreateTicketOverlay from "./ui/FormOverlay";
 import { createTicketOverlayAtom } from "@/atoms/OverlayAtom";
-
 const queryClient = new QueryClient();
-
 function AppContent() {
   const [showOverlay, setShowOverlay] = useAtom(createTicketOverlayAtom);
 
