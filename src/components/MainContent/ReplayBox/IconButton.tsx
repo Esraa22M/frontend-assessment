@@ -11,7 +11,7 @@ interface IconButtonProps {
 const IconButton: React.FC<IconButtonProps> = ({ bgColor = "#FFFFFF", Icon, label, labelColor = "#FFFFFF", onClick }) => {
     return (
         <button
-            className={`w-8 h-8 rounded-[8px] flex items-center justify-center ${Icon ? "border border-[#7A8699]" : ""}`}
+            className={`w-8 h-8 rounded-[8px] cursor-pointer flex items-center justify-center ${Icon ? "border border-[#7A8699]" : ""}`}
             style={{ backgroundColor: bgColor }}
             onClick={onClick}
         >

@@ -1,18 +1,21 @@
-import React from "react";
-import { Check, Fullscreen, MoreVertical } from "lucide-react";
+import React, { useCallback, useState } from "react";
+import { Check, Fullscreen, Minimize, MoreVertical } from "lucide-react"; // لاحظي أضفت Minimize
 import TicketHeader from "./TicketHeader";
 import TicketHeaderWithPlay from "./TicketHeaderWithPlay";
 import { useAtom } from "jotai";
 import { ticketFullscreenAtom } from "@/atoms/TicketAtoms";
-import { useCallback } from "react";
 
 interface TicketHeaderRowProps {
   header?: string;
 }
+
 const TicketHeaderRow: React.FC<TicketHeaderRowProps> = ({ header }) => {
   const [, setIsFullscreen] = useAtom(ticketFullscreenAtom);
+  const [isFullscreenIcon, setIsFullscreenIcon] = useState(false); // state للأيقونة
+
   const handleToggle = useCallback(() => {
     setIsFullscreen((prev) => !prev);
+    setIsFullscreenIcon((prev) => !prev); // نعكس الأيقونة
   }, [setIsFullscreen]);
 
   return (
@@ -30,12 +33,18 @@ const TicketHeaderRow: React.FC<TicketHeaderRowProps> = ({ header }) => {
             تحويل لمهمة
           </span>
         </div>
+
         {/* Fullscreen Button */}
-        <button onClick={handleToggle}>
+        <button onClick={handleToggle} className="cursor-pointer">
           <div className="w-[32px] h-[32px] rounded-[8px] border border-[#7A8699] flex items-center justify-center">
-            <Fullscreen className="w-5 h-5 text-[#7A8699]" />
+            {isFullscreenIcon ? (
+              <Minimize className="w-5 h-5 text-[#7A8699]" />
+            ) : (
+              <Fullscreen className="w-5 h-5 text-[#7A8699]" />
+            )}
           </div>
         </button>
+
         {/* More Icon */}
         <div className="w-[24px] h-[32px] rounded-[8px] border border-[#7A8699] flex items-center justify-center">
           <MoreVertical className="w-4 h-4 text-[#7A8699]" />
